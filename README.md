@@ -16,7 +16,7 @@ Features
 
 Ensure you have the following prerequisites installed on your system:
 - Java Development Kit (JDK)
-   - This project requires Java 17.
+   - This project requires Java 21.
 - Gradle - 7.5 or higher
 - IDE: IntelliJ
 - MySQL
