@@ -24,11 +24,8 @@ public class LinkedInCrawler implements Crawler {
             jobOffer.setUrl(url);
             jobOffer.setSiteId("linkedin");
             jobOffers.add(jobOffer);
-//            InMemoryStorage.getInstance().saveJob(website, jobOffer);
         }
 
         return jobOffers;
-
-//        InMemoryStorage.getInstance().saveJobsToFile(website, "linked-offers.txt");
     }
 }

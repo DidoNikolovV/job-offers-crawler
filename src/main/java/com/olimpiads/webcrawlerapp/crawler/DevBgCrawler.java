@@ -27,7 +27,5 @@ public class DevBgCrawler implements Crawler {
         }
 
         return jobOffers;
-//        InMemoryStorage.getInstance().saveJobsToFile(website, "dev-bg.txt");
-
     }
 }

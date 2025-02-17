@@ -11,10 +11,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 class CrawlServiceTest {
@@ -38,7 +40,6 @@ class CrawlServiceTest {
 
     @Test
     void testCrawlServiceCrawlsJobs() {
-        // Arrange
         List<String> websites = List.of("https://dev.bg/company/jobads/egt-digital-senior-net-developer-retail-1/");
         WebsitesDto request = new WebsitesDto(websites);
 
