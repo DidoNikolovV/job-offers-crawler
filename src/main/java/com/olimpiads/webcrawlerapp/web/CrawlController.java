@@ -4,6 +4,10 @@ package com.olimpiads.webcrawlerapp.web;
 import com.olimpiads.webcrawlerapp.model.dto.WebsitesDto;
 import com.olimpiads.webcrawlerapp.model.entity.JobOffer;
 import com.olimpiads.webcrawlerapp.service.CrawlService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,12 +28,17 @@ public class CrawlController {
         this.crawlService = crawlService;
     }
 
+    @Operation(summary = "Start job crawling", description = "Triggers crawling for the given websites.")
+    @ApiResponse(responseCode = "204", description = "Crawling started successfully")
     @PostMapping
-    public ResponseEntity<Void> crawlWebsites(@RequestBody WebsitesDto request) {
+    public ResponseEntity<String> crawlWebsites(@RequestBody WebsitesDto request) {
         crawlService.crawlJobs(request);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Crawling started successfully");
     }
 
+    @Operation(summary = "Get job offers", description = "Fetches job offers for a specific website")
+    @ApiResponse(responseCode = "200", description = "List of job offers",
+            content = @Content(schema = @Schema(implementation = JobOffer.class)))
     @GetMapping("/{website}")
     public ResponseEntity<List<JobOffer>> getJobOffers(@PathVariable("website") String website) {
         return ResponseEntity.ok(crawlService.getJobOffers(website));

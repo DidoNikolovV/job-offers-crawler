@@ -1,8 +1,8 @@
 package com.olimpiads.webcrawlerapp.service;
 
 
-import com.olimpiads.webcrawlerapp.crawler.Crawler;
 import com.olimpiads.webcrawlerapp.ObjectPool;
+import com.olimpiads.webcrawlerapp.crawler.Crawler;
 import com.olimpiads.webcrawlerapp.model.dto.WebsitesDto;
 import com.olimpiads.webcrawlerapp.model.entity.JobOffer;
 import com.olimpiads.webcrawlerapp.repository.JobOffersRepository;
