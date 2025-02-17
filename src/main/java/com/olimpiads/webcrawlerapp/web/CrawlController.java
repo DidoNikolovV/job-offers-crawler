@@ -29,7 +29,7 @@ public class CrawlController {
     }
 
     @Operation(summary = "Start job crawling", description = "Triggers crawling for the given websites.")
-    @ApiResponse(responseCode = "204", description = "Crawling started successfully")
+    @ApiResponse(responseCode = "200", description = "Crawling started successfully")
     @PostMapping
     public ResponseEntity<String> crawlWebsites(@RequestBody WebsitesDto request) {
         crawlService.crawlJobs(request);
