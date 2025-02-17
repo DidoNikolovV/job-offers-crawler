@@ -1,7 +1,7 @@
 This is a Sample Spring Boot application that crawls job listings from multiple sources (Dev.bg, LinkedIn, etc.) and stores them in database. The project supports multi-threaded crawling with an Object Pool and provides an API to retrieve job offers.
 Features
     Multi-threaded crawling with configurable concurrency.
-    Supports multiple job websites like LinkedIn, Dev.bg, and Indeed.
+    Supports multiple job websites like LinkedIn, Dev.bg.
     REST API to fetch job listings.
     Swagger API Documentation for easy exploration.
 
